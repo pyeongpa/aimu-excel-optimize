@@ -72,7 +72,7 @@ def process_excel(filepath, original_filename):
                 elif "A타입" in i_value:
                     q_cell.value = "pa_v1.0"
                 elif "B타입" in i_value:
-                    q_cell.value = "pb_v1.0"
+                    q_cell.value = "pa_v1.5"
                 elif "5M 튜빙선" in i_value:
                     q_cell.value = "sm_5m"
                 else:
