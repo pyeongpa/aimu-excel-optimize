@@ -95,9 +95,9 @@ def process_excel(filepath, original_filename):
                 o_cell = ws.cell(row=row, column=15)
                 n_value = str(n_cell.value) if n_cell.value else ""
 
-                if "카페24(자사몰)" in n_value:
-                    n_cell.value = "m_ca"
-                    o_cell.value = ""
+                if n_value:
+                if any(keyword in n_value for keyword in ["aimu(모바일)", "aimu(PC)", "PC몰"]):
+                   o_cell.value = "m_ca"
                 elif "지오코리아" in n_value:
                     n_cell.value = "m_gi"
                     o_cell.value = ""
