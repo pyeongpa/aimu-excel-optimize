@@ -113,9 +113,8 @@ def process_excel(filepath, original_filename):
                 elif "스마트스토어" in n_value:
                     n_cell.value = "m_sm"
                     o_cell.value = ""
-                elif "카페24(네이버)" in n_value:
-                    n_cell.value = "m_cna"
-                    o_cell.value = ""
+               elif any(keyword in n_value for keyword in ["네이버페이", "네이버쇼핑"]):
+                     o_cell.value = "m_cna"
                 elif "플린트" in n_value:
                     n_cell.value = "m_pl"
                     o_cell.value = ""
