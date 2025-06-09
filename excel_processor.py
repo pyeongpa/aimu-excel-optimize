@@ -118,6 +118,9 @@ def process_excel(filepath, original_filename):
                     elif "니코보코" in n_value:
                         n_cell.value = "m_ni"
                         o_cell.value = ""
+                    elif "위드무케" in n_value:
+                        n_cell.value = "m_ni"
+                        o_cell.value = ""                        
                     elif "오늘의집" in n_value:
                         n_cell.value = "m_o"
                         o_cell.value = ""
