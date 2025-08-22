@@ -34,6 +34,8 @@ def process_excel(filepath, original_filename):
                     q_cell.value = "sm_valve"
                 elif "5M 튜빙선" in i_value and "단품" in i_value:
                     q_cell.value = "sm_5m"
+                elif ("공기청정기" in i_value or "BAS-017" in i_value) and "필터" in i_value:
+                    q_cell.value = "ba_v1.0"
                 elif "공기청정기" in i_value or "BAS-017" in i_value:
                     q_cell.value = "bg_v1.0"
                 elif (
@@ -69,9 +71,9 @@ def process_excel(filepath, original_filename):
                 ):
                     q_cell.value = "wa_v1.5"
                 elif "A타입" in i_value:
-                    q_cell.value = "pa_v1.0"
+                    q_cell.value = "pa_v2.0"
                 elif "B타입" in i_value:
-                    q_cell.value = "pa_v1.5"
+                    q_cell.value = "pa_v2.5"
                 elif "5M 튜빙선" in i_value:
                     q_cell.value = "sm_5m"
                 else:
@@ -80,7 +82,7 @@ def process_excel(filepath, original_filename):
 
                 # R열 자동 분류
                 r_cell = ws.cell(row=row, column=18)
-                if "설치요청" in i_value:
+                if "설치요청" in i_value or "설치+30000" in i_value:
                     r_cell.value = "p1"
                 elif "직접설치" in i_value:
                     r_cell.value = "u1"
@@ -144,6 +146,9 @@ def process_excel(filepath, original_filename):
                         o_cell.value = ""
                     elif "직원구매" in n_value:
                         n_cell.value = "m_ep"
+                        o_cell.value = ""
+                    elif "교환" in n_value:
+                        n_cell.value = "ex"
                         o_cell.value = ""
                     else:
                         o_cell.value = "false"
